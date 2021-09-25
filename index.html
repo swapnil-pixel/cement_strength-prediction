@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Flask & Heroku deployment</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Strength_Predictor</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://luxuryind.com/homepeaceful-life/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/soumya26-pi/ML_Concrete-strength-prediction-deployment-on-heroku">Github_code</a>
+      </li>
+      <li class="nav-item dropdown">
+        
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+<body>
+
+<img src=
+"https://miro.medium.com/max/2800/1*GaEXrhvFWsu8idw4y17tCg.png"
+         alt="zomato image", width="400", height="150", style="float:left">
+
+<img src=
+"https://images-eu.ssl-images-amazon.com/images/I/31tHbUemDoL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg"
+         alt="zomato image", width="500", height="150", style="float:right">
+
+<style>
+body {
+  background-image: url("https://editor.analyticsvidhya.com/uploads/48395cost-overruns-in-construction.jpg");
+  background-position: 200%;
+  background-size: cover;
+}
+</style>
+
+
+
+ <div class="login">
+	
+    
+ 
+     <!-- Main Input For Receiving Query to our ML -->
+    <center><form action="{{ url_for('predict')}}"method="post"><br><br><br><br><br><br>
+    <center><h1 color='white'></h1> <button type="button" class="btn btn-dark">Concrete Strength Predictor</button><font color='red'></font></h1></center><br>
+
+    <input type="text" name="cement" placeholder="cement" required="required"/><br>
+    <input type="text" name="Blast Furnace slag" placeholder="Blast Furnace slag" required="required"/><br>
+    <input type="text" name="Fly Ash" placeholder="Fly Ash" required="required"/><br>
+		<input type="text" name="water" placeholder="water" required="required"/><br>
+    <input type="text" name="superplastic" placeholder="superplastic" required="required"/><br>
+    <input type="text" name="Coarse Aggregate" placeholder="Coarse Aggregate" required="required"/><br>
+    <input type="text" name="Fine Aggregate" placeholder="Fine Aggregate" required="required"/><br>
+    <input type="text" name="age" placeholder="age" required="required"/><br>
+    
+    
+   <!-- <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>-->
+   <button type="submit" class="btn btn-primary">Predict</button>
+
+    </form></center>
+    
+
+   <br>
+   <br>
+   <h1>
+    <center><button type="submit" class="btn btn-primary">{{ prediction_text }}</button></center></h1>
+
+
+ </div>
+
+
+</body>
+<div class="container my-5">
+  
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/shouryam_77/" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/soumya-ranjan-prusty-732561204/" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/soumya26-pi" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        This is a software application which is used for predicting the strength of concrete using Machine Learning.
+      </p>
+    </section>
+    <!-- Section: Text -->
+    <center>
+    <!-- Section: Links -->
+    <section class="mb-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        
+        <!--Grid column-->
+
+        <!--Grid column-->
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contact</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="https://www.instagram.com/shouryam_77/" class="text-white">Soumya Ranjan Prusty</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/soumya-ranjan-prusty-732561204/" class="text-white">soumya777prusty@gmail.com</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">7735272541</a>
+            </li>
+            <li>
+              <a href="https://www.google.co.in/maps/place/Odisha/@20.1819215,82.1909446,7z/data=!3m1!4b1!4m5!3m4!1s0x3a226aece9af3bfd:0x133625caa9cea81f!8m2!3d20.9516658!4d85.0985236?hl=en" class="text-white">Odisha,India</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Technology Used</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="https://www.google.com/search?q=machine+learning&rlz=1C1ZKTG_enIN885IN885&sxsrf=AOaemvJK_AKJzKrSPIumtkSJFwhFXn9F0w%3A1632576296000&ei=JyNPYam4PK70juMPua-d-AI&oq=machine+learing&gs_lcp=Cgdnd3Mtd2l6EAEYADIHCCMQsQIQJzIHCCMQsQIQJzIHCCMQsQIQJzIHCAAQsQMQCjIECAAQCjIHCAAQsQMQCjIHCAAQsQMQCjIHCAAQsQMQCjIHCAAQsQMQCjIECAAQCjoHCCMQsAMQJzoHCAAQRxCwAzoNCC4QxwEQ0QMQJxCTAjoECCMQJzoQCAAQgAQQhwIQsQMQgwEQFDoICAAQgAQQsQM6CwgAEIAEELEDEIMBOggIABCxAxCDAToQCC4QxwEQ0QMQ6gIQJxCTAjoHCCMQ6gIQJzoNCC4QxwEQowIQ6gIQJzoFCAAQkQI6DgguEIAEELEDEMcBENEDOgcIABCxAxBDOgoILhDHARDRAxBDOgQIABBDOgUIABCABDoLCC4QgAQQsQMQgwE6EQguEIAEELEDEIMBEMcBEKMCOg0ILhCxAxDHARCjAhBDOgcILhCxAxBDOgYILhAKEEM6BwgAEMkDEENKBAhBGABQyQtYhTZglkZoAnACeASAAf4FiAHGMJIBDTAuNS44LjMuMi4xLjGYAQCgAQGwAQrIAQrAAQE&sclient=gws-wiz" class="text-white">Machine Learning</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/search?q=html&rlz=1C1ZKTG_enIN885IN885&sxsrf=AOaemvLk0dedH1W4hlMMnzbNK4x5ol_rpw%3A1632576306396&ei=MiNPYZDeF47G4-EP0ZWtuAY&oq=html&gs_lcp=Cgdnd3Mtd2l6EAwyBAgjECcyBAgjECcyBAgAEEMyBwgAELEDEEMyBAgAEEMyBAgAEEMyBwgAELEDEEMyBAgAEEMyBwgAELEDEEMyCAgAEIAEELEDOgcIIxDqAhAnOg0ILhDHARCjAhDqAhAnOgsIABCABBCxAxCDAToFCAAQgARKBAhBGABQsJsCWNKlAmDSsgJoAXACeAGAAZMIiAGQEJIBCzMtMS4wLjEuMC4xmAEAoAEBsAEKwAEB&sclient=gws-wiz&ved=0ahUKEwiQv77WnJrzAhUO4zgGHdFKC2cQ4dUDCA4" class="text-white">HTML</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/search?q=css&rlz=1C1ZKTG_enIN885IN885&sxsrf=AOaemvIv0lDPRf-VgzOH12j1FVz5P1yG8A%3A1632576347510&ei=WyNPYZe6HuXF4-EPxqyQsAc&oq=css&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAELEDEEMyBwgAELEDEEMyBwgAELEDEEMyDQgAEIAEEIcCELEDEBQyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEMyBwgAELEDEEMyBAgAEEM6BwgjELADECc6BwgAEEcQsAM6BAgjECc6CAgAEIAEELEDOgUIABCABDoHCCMQ6gIQJzoNCC4QxwEQowIQ6gIQJzoKCC4QxwEQ0QMQQzoLCAAQgAQQsQMQgwE6CAgAELEDEIMBSgQIQRgAUPbMAliA2QJgoN4CaAJwAngDgAHQB4gBsBeSAQ0wLjEuMC4yLjEuMS4xmAEAoAEBsAEKyAEKwAEB&sclient=gws-wiz&ved=0ahUKEwjX04vqnJrzAhXl4jgGHUYWBHYQ4dUDCA4&uact=5" class="text-white">CSS</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/search?q=bootstrap&rlz=1C1ZKTG_enIN885IN885&sxsrf=AOaemvL0NLgLft-YyedWMH_Zj0VZq0iU4g%3A1632576393795&ei=iSNPYe_6L8iX4-EPyq6CwAo&oq=bootstrap&gs_lcp=Cgdnd3Mtd2l6EAwyBAgjECcyBAgjECcyBAgjECcyBAgAEEMyBAgAEEMyCAgAEIAEELEDMggIABCABBCxAzIICAAQgAQQsQMyCAgAEIAEELEDMggIABCABBCxAzoHCAAQRxCwAzoHCAAQsAMQQzoLCAAQgAQQsQMQgwE6CAgAELEDEIMBOgsILhCABBCxAxCDAToHCCMQ6gIQJzoNCC4QxwEQowIQ6gIQJzoFCAAQgAQ6CAguEIAEELEDOg4IABCABBCxAxCDARDJAzoFCAAQkgNKBAhBGABQndEDWJnsA2CA-ANoAnACeAGAAdECiAGBF5IBBTItNy40mAEAoAEBsAEKyAEKwAEB&sclient=gws-wiz&ved=0ahUKEwiv45SAnZrzAhXIyzgGHUqXAKgQ4dUDCA4" class="text-white">Bootstrap</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Follow me on </h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="https://www.instagram.com/shouryam_77/" class="text-white">Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/soumya-ranjan-prusty-732561204/" class="text-white">Linkedin</a>
+            </li>
+            <li>
+              <a href="https://github.com/soumya26-pi" class="text-white">Github</a>
+            </li>
+            <li>
+              <a href="https://orcid.org/my-orcid?orcid=0000-0003-0141-1402" class="text-white">ORCID</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Deployment</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="https://www.google.com/search?q=heroku&rlz=1C1ZKTG_enIN885IN885&oq=heroku&aqs=chrome.0.69i59j46i39i199i291j69i59l2j46i67i433j0i67l5.1408j0j15&sourceid=chrome&ie=UTF-8" class="text-white">Heroku</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/search?q=flask&rlz=1C1ZKTG_enIN885IN885&sxsrf=AOaemvIWia8XiEGhheWS1SlwiU3vKcPaMA%3A1632577071161&ei=LyZPYdywCYr49QOP3Z-wBw&oq=flask&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyBwgAELEDEEMyBAgAEEMyBwgAELEDEEMyBAgAEEMyBAgAEEMyBAgAEEMyBAgAEEM6BwgjEOoCECc6DQguEMcBEKMCEOoCECdKBAhBGABQ0cUDWKzMA2Ci0QNoAXACeACAAdUHiAHQF5IBBTUtMS4zmAEAoAEBsAEKwAEB&sclient=gws-wiz&ved=0ahUKEwichJTDn5rzAhUKfH0KHY_uB3YQ4dUDCA4&uact=5" class="text-white">Flask</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+  </center>
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://luxuryind.com/">luxuryind.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+</div>
+</html>
